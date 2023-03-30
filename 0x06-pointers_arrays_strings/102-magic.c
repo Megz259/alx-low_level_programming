@@ -1,11 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - Entry point
- * is written by mh
- * Return: Always 0 (success)
- */
-
 int main(void)
 {
 int n;
