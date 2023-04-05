@@ -2,13 +2,13 @@
 
 int check_pal(char *s, int i, int len);
 int _strlen_recursion(char *s);
+
 /**
  * is_palindrome - checks if a string is a palindrome
  * @s: string to reverse
  *
- * Return: 1 if it is, 0 if not
+ * Return: 1 if it is, 0 it's not
  */
-
 int is_palindrome(char *s)
 {
 	if (*s == 0)
@@ -18,11 +18,10 @@ int is_palindrome(char *s)
 
 /**
  * _strlen_recursion - returns the length of a string
- * @s: string to calculate length of
+ * @s: string to calculate the length of
  *
- * Return: lenth of string
+ * Return: lenth of the string
  */
-
 int _strlen_recursion(char *s)
 {
 	if (*s == '\0')
@@ -34,11 +33,10 @@ int _strlen_recursion(char *s)
  * check_pal - checks the characters recursively for palindrome
  * @s: string to check
  * @i: iterator
- * @len: length of string
+ * @len: length of the string
  *
  * Return: 1 if palindrome, 0 if not
  */
-
 int check_pal(char *s, int i, int len)
 {
 	if (*(s + 1) != *(s + len - 1))
