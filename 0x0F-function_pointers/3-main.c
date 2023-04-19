@@ -11,34 +11,32 @@
  * Return: always 0
  */
 
-int main(int __attribute__((__unused__)) argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int num1, num2;
-	char *op;
+	int a = 0, b = 0, res = 0;
+	char s;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	num1 = atoi(argv[1]);
-	op = argv[2];
-	num2 = atoi(argv[3]);
-
-	if (get_op_func(op) == NULL || op[1] != '\0')
+	if (argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if ((*op == '/' && num2 == 0) || (*op == '%' && num2 == 0))
+	s = argv[2][0];
+	if (s != '+' && s != '-' && s != '/' && s != '*' && s != '%')
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 
-	printf("%d\n", get_op_func(op)(num1, num2));
-
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	res = (get_op_func(argv[2]))(a, b);
+	printf("%d\n", res);
 	return (0);
 }
