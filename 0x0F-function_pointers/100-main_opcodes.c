@@ -12,6 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int bytes, i;
+	char *arr;
 
 	if (argc != 2)
 	{
@@ -27,13 +28,16 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	for (count = 0; count < bytes; count++)
+	arr = (char *)main;
+
+	for (i = 0; i < bytes; i++)
 	{
-		printf("%02hhx", *((char *)main + count));
-		if (count < bytes - 1)
-			printf(" ");
-		else
-			printf("\n");
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx", arr[i]);
 	}
 	return (0);
 }
