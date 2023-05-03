@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "lists.h"
 
-/*
+/**
  * print_listint - prints all the elements of a list
  * listint - singly linked list
- * @h: singly linked list to print
+ * @h: singly linked list of listint to print
  *
  * Return: the number of nodes
  */
