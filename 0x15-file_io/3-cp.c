@@ -23,6 +23,26 @@ void close_file(int fd)
 	}
 }
 /**
+ * create_buff - create a buffer
+ * @txtfile: text file
+ *
+ * Return: pointer to the new buffer
+ */
+char *create_buff(char *txtfile)
+{
+	char *buff;
+
+	buff = malloc(sizeof(char) * 1024);
+	if (buff == NULL)
+	{
+		dprintf(STDERR_FILENO, " Error: Can't write to NAME_OF_THE_FILE %s\n",
+				txtfile);
+		exit(99);
+	}
+	return (buff);
+}
+
+/**
  * main - copy contents of a file to another file
  * @argc: argument count
  * @argv: array of pointers to array of character object
@@ -39,8 +59,7 @@ void close_file(int fd)
 
 int main(int argc, char *argv[])
 {
-	int c;
-	int file_from, file_to;
+	int c, file_from, file_to;
 	char buff[1024];
 
 	if (argc != 3)
