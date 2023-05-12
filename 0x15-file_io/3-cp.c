@@ -71,7 +71,8 @@ int main(int argc, char *argv[])
 	file_from = open(argv[1], O_RDONLY);
 	c = read(file_from, buff, 1024);
 
-	if (buff == NULL)
+	do {
+		if (buff == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE %s\n",
 				argv[2]);
@@ -93,6 +94,8 @@ int main(int argc, char *argv[])
 				argv[1]);
 		exit(98);
 	}
+	} while (c > 0);
+
 	file_to = open(argv[2], O_WRONLY | O_APPEND);
 	close_file(file_from);
 	close_file(file_to);
