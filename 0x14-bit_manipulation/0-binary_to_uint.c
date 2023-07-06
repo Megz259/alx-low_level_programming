@@ -14,22 +14,22 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	int number = 0;
+	int number;
 	unsigned int dec_value = 0;
 	int base = 1;
 
-	int temp = number;
+	if (!(b))
+		return (0);
 
-	for (temp = 0; b[temp]; temp++)
+	for (number = 0; b[number]; number++)
 	{
 
-	while (temp)
-	{
-		int c = temp % 10;
+	if (b[number] < '0')
+		return (0);
 
-		temp = temp / 10;
-		dec_value = (base * 2) * dec_value + (b[c] - '0');
-	}
+	if (b[number] > '1')
+		return (0);
+	dec_value = (base * 2) * dec_value + (b[number] - '0');
 	}
 	return (dec_value);
 }
