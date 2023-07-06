@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <math.h>
 
 /**
  * print_binary - prints the binary representation of a number.
@@ -13,12 +12,13 @@
 
 void print_binary(unsigned long int n)
 {
-	int a;
+	int a, c = 0;
 	unsigned long int b;
 
 	for (a = 63; a >= 0; a--)
 	{
-		if ((n >> a) & 1)
+		c = (n >> a);
+		if ( c & 1)
 		{
 			_putchar('1');
 			b++;
