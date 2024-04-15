@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_delete - free table 
+ * hash_table_delete - free table
  * @ht: pointer to table
  *
  */
@@ -15,7 +15,7 @@ void hash_table_delete(hash_table_t *ht)
 	if (!ht)
 		return;
 
-	for (j = 0; j <ht->size; j++)
+	for (j = 0; j < ht->size; j++)
 	{
 		buck = ht->array[j];
 		while (buck)

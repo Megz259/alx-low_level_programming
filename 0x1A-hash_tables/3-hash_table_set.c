@@ -16,10 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *keycopy;
 	hash_node_t *buck, *new_node;
 
-	if (!ht || !key)
-		return (0);
-
-	if (!*key || !value)
+	if (!ht || !key || !*key || !value)
 		return (0);
 
 	valuecopy = strdup(value);
